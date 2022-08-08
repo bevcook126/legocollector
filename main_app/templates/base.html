@@ -18,11 +18,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;LegoCollector</a></li>
+          <li><a href="/" class="left brand-logo" id="logocolor">&nbsp;&nbsp;LegoCollector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/legos">View All My Legos</a></li>
+          <li><a href="{% url 'about' %}" id="navcolor">About</a></li>
+          <li><a href="{% url 'legos_create' %}" id="navcolor">Add a Lego Set</a></li>
+          <li><a href="{% url 'index' %}" id="navcolor">View All My Legos</a></li>
         </ul>
       </div>
     </nav>

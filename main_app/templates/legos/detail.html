@@ -10,6 +10,10 @@
     <p>Description: {{ lego.description|linebreaks }}</p>
     <p>Age: {{ lego.minimumage }}+</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'legos_update' lego.id %}">Edit</a>
+    <a href="{% url 'legos_delete' lego.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}

@@ -16,9 +16,21 @@ footer.page-footer {
     background-image: url('https://i.imgur.com/FYYCDbi.png?1');
     background-size: cover;
     color: black;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
 }
 
 .nav-wrapper {
     background-image: url('https://i.imgur.com/FYYCDbi.png?1');
     background-size: cover;
+}
+
+#navcolor, #logocolor {
+    color: black;
+}
+
+#navcolor {
+    font-size: 20px;
 }
