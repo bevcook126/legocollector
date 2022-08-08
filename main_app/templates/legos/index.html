@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Legos List</h1>
+
+{% for lego in legos %}
+  <div class="card">
+    <a href="{% url 'detail' lego.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ lego.name }}</span>
+        <p>Pieces: {{ lego.pieces }}</p>
+        <p>Description: {{ lego.description }}</p>
+        <p>Age: {{ lego.minimumage }}+</p>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}

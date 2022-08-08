@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Lego Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ lego.name }}</span>
+    <p>Pieces: {{ lego.pieces }}</p>
+    <p>Description: {{ lego.description|linebreaks }}</p>
+    <p>Age: {{ lego.minimumage }}+</p>
+  </div>
+</div>
+
+{% endblock %}
