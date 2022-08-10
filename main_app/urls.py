@@ -9,4 +9,12 @@ urlpatterns = [
     path('legos/create/', views.LegoCreate.as_view(), name='legos_create'),
     path('legos/<int:pk>/update/', views.LegoUpdate.as_view(), name='legos_update'),
     path('legos/<int:pk>/delete/', views.LegoDelete.as_view(), name='legos_delete'),
+    path('legos/<int:lego_id>/add_figure/', views.add_figure, name='add_figure'),
+    path('legos/<int:lego_id>/assoc_collection/<int:collection_id>/', views.assoc_collection, name='assoc_collection'),
+    path('legos/<int:lego_id>/unassoc_collection/<int:collection_id>/', views.unassoc_collection, name='unassoc_collection'),
+    path('collections/', views.CollectionList.as_view(), name='collections_index'),
+    path('collections/<int:pk>/', views.CollectionDetail.as_view(), name='collections_detail'),
+    path('collections/create/', views.CollectionCreate.as_view(), name='collections_create'),
+    path('collections/<int:pk>/update/', views.CollectionUpdate.as_view(), name='collections_update'),
+    path('collections/<int:pk>/delete/', views.CollectionDelete.as_view(), name='collections_delete'),
 ]
