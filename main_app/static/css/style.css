@@ -51,7 +51,9 @@ footer.page-footer {
 #home {
     width: 90vh;
     border: 3px solid rgb(255, 213, 0);
-    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #about-info {
@@ -60,4 +62,8 @@ footer.page-footer {
     margin-bottom: 10vh;
     margin-left: 5vh;
     width: 500px;
+}
+
+#home-text {
+    text-align: center;
 }
