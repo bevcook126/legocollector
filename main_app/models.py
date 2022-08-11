@@ -15,7 +15,7 @@ class Collection(models.Model):
 class Lego(models.Model):
     name = models.CharField(max_length=100)
     pieces = models.IntegerField()
-    availability = models.TextField(max_length=2500)
+    availability = models.CharField(max_length=2500)
     minimum_age = models.IntegerField()
     collections = models.ManyToManyField(Collection)
 

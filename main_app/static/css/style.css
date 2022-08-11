@@ -34,3 +34,12 @@ footer.page-footer {
 #navcolor {
     font-size: 20px;
 }
+
+#about-page {
+    display: grid;
+}
+
+#home {
+    width: 90vh;
+    border: 3px solid rgb(255, 213, 0);
+}
