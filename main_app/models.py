@@ -28,6 +28,7 @@ class Lego(models.Model):
 
 class Figure(models.Model):
     name = models.CharField(max_length=100)
+    accessories = models.CharField(max_length=100, default='', blank=True)
     lego = models.ForeignKey(
         Lego,
         on_delete=models.CASCADE
@@ -36,3 +37,9 @@ class Figure(models.Model):
     def __str__(self):
         return f'Added {self.name} to {self.lego}'
 
+class Photo(models.Model):
+  url = models.CharField(max_length=200)
+  cat = models.ForeignKey(Lego, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f'Photo for lego_id {self.lego_id} at url {self.url}'

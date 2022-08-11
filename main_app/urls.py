@@ -12,6 +12,7 @@ urlpatterns = [
     path('legos/<int:lego_id>/add_figure/', views.add_figure, name='add_figure'),
     path('legos/<int:lego_id>/assoc_collection/<int:collection_id>/', views.assoc_collection, name='assoc_collection'),
     path('legos/<int:lego_id>/unassoc_collection/<int:collection_id>/', views.unassoc_collection, name='unassoc_collection'),
+    path('legos/<int:lego_id>/add_photo/', views.add_photo, name='add_photo'),
     path('collections/', views.CollectionList.as_view(), name='collections_index'),
     path('collections/<int:pk>/', views.CollectionDetail.as_view(), name='collections_detail'),
     path('collections/create/', views.CollectionCreate.as_view(), name='collections_create'),

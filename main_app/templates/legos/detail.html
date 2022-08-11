@@ -17,6 +17,17 @@
         <a href="{% url 'legos_delete' lego.id %}">Delete</a>
       </div>
     </div>
+    {% for photo in lego.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}" alt="lego photo">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}  
+    <form action="{% url 'add_photo' lego.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <br><br>
+      <input type="submit" class="btn" value="Upload Photo">
+    </form>
   </div>
   <div class="col s6">
     <form action="{% url 'add_figure' lego.id %}" method="POST">
@@ -29,14 +40,14 @@
       <thead>
         <tr>
           <th>Figure Name</th>
-          <th>Image</th>
+          <th>Accessories</th>
         </tr>
       </thead>
       <tbody>
         {% for figure in lego.figure_set.all %}
           <tr>
-            <td>{{figure.name}}</td>
-            <td>"image will go here!"</td>
+            <td>{{ figure.name }}</td>
+            <td>{{ figure.accessories }}</td>
           </tr>
         {% endfor %}
       </tbody>
