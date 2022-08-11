@@ -36,10 +36,28 @@ footer.page-footer {
 }
 
 #about-page {
-    display: grid;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10vh;
+}
+
+#about {
+    border: 3px solid rgb(255, 213, 0);
+    width: 55vmin;
+    height: 40vmin;
+    margin: 5vh;
 }
 
 #home {
     width: 90vh;
     border: 3px solid rgb(255, 213, 0);
+    margin: auto;
+}
+
+#about-info {
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin-left: 5vh;
+    width: 500px;
 }
