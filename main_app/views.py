@@ -32,7 +32,7 @@ def legos_detail(request, lego_id):
 
 class LegoCreate(CreateView):
   model = Lego
-  fields = '__all__'
+  fields = ['name', 'pieces', 'availability', 'minimum_age']
   success_url = '/legos/'
 
 class LegoUpdate(UpdateView):

@@ -10,7 +10,7 @@
         <span class="card-title">{{ lego.name }}</span>
         <p>Pieces: {{ lego.pieces }}</p>
         <p>Availability: {{ lego.availability }}</p>
-        <p>Age: {{ lego.minimum_age }}</p>
+        <p>Age: {{ lego.minimum_age }}+</p>
       </div>
       <div class="card-action">
         <a href="{% url 'legos_update' lego.id %}">Edit</a>
