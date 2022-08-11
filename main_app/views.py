@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Lego, Collection, Photo
-from .forms import FigureForm
+from .forms import MinifigForm
 
 def home(request):
     return render(request, 'home.html')
@@ -23,12 +23,12 @@ def legos_detail(request, lego_id):
   lego = Lego.objects.get(id=lego_id)
   id_list = lego.collections.all().values_list('id')
   unassociated_collections = Collection.objects.exclude(id__in=id_list)
-  figure_form = FigureForm()
+  minifig_form = MinifigForm()
   return render(
     request, 
     'legos/detail.html', 
     {'lego': lego, 
-    'figure_form': figure_form, 
+    'minifig_form': minifig_form, 
     'collections': unassociated_collections
     }
   )
@@ -46,12 +46,12 @@ class LegoDelete(DeleteView):
   model = Lego
   success_url = '/legos/'
 
-def add_figure(request, lego_id):
-  form = FigureForm(request.POST)
+def add_minifig(request, lego_id):
+  form = MinifigForm(request.POST)
   if form.is_valid():
-    new_figure = form.save(commit=False)
-    new_figure.lego_id = lego_id
-    new_figure.save()
+    new_minifig = form.save(commit=False)
+    new_minifig.lego_id = lego_id
+    new_minifig.save()
   return redirect('detail', lego_id=lego_id)
 
 def assoc_collection(request, lego_id, collection_id):

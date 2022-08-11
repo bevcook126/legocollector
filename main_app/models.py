@@ -26,7 +26,7 @@ class Lego(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'lego_id': self.id})
 
-class Figure(models.Model):
+class Minifig(models.Model):
     name = models.CharField(max_length=100)
     accessories = models.CharField(max_length=100, default='', blank=True)
     lego = models.ForeignKey(
@@ -39,7 +39,7 @@ class Figure(models.Model):
 
 class Photo(models.Model):
   url = models.CharField(max_length=200)
-  cat = models.ForeignKey(Lego, on_delete=models.CASCADE)
+  lego = models.ForeignKey(Lego, on_delete=models.CASCADE)
 
   def __str__(self):
     return f'Photo for lego_id {self.lego_id} at url {self.url}'

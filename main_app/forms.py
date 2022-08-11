@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Figure
+from .models import Minifig
 
-class FigureForm(ModelForm):
+class MinifigForm(ModelForm):
   class Meta:
-    model = Figure
+    model = Minifig
     fields = ['name', 'accessories']
 

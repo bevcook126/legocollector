@@ -30,30 +30,30 @@
     </form>
   </div>
   <div class="col s6">
-    <form action="{% url 'add_figure' lego.id %}" method="POST">
+    <form action="{% url 'add_minifig' lego.id %}" method="POST">
       {% csrf_token %}
-      {{ figure_form.as_p }}
-      <input type="submit" class="btn" value="Add Figure to Set">
+      {{ minifig_form.as_p }}
+      <input type="submit" class="btn" value="Add Minifig to Set">
     </form>
-    {% if lego.figure_set.all %}
+    {% if lego.minifig_set.all %}
     <table class="striped">
       <thead>
         <tr>
-          <th>Figure Name</th>
+          <th>Minifig Name</th>
           <th>Accessories</th>
         </tr>
       </thead>
       <tbody>
-        {% for figure in lego.figure_set.all %}
+        {% for minifig in lego.minifig_set.all %}
           <tr>
-            <td>{{ figure.name }}</td>
-            <td>{{ figure.accessories }}</td>
+            <td>{{ minifig.name }}</td>
+            <td>{{ minifig.accessories }}</td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
     {% else %}
-    <br><h6>This set has no figures :(</h6>
+    <br><h6>This set has no Minifigs :(</h6>
     {% endif %}
   </div>
 </div>
