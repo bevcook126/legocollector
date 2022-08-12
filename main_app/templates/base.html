@@ -23,10 +23,16 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}" id="navcolor">About</a></li>
-          <li><a href="{% url 'collections_create' %}" id="navcolor">Add a Collection</a></li>
-          <li><a href="{% url 'collections_index' %}" id="navcolor">View All Collections</a></li>
-          <li><a href="{% url 'legos_create' %}" id="navcolor">Add a Lego Set</a></li>
-          <li><a href="{% url 'index' %}" id="navcolor">View All My Legos</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'collections_create' %}" id="navcolor">Add a Collection</a></li>
+            <li><a href="{% url 'collections_index' %}" id="navcolor">View All Collections</a></li>
+            <li><a href="{% url 'legos_create' %}" id="navcolor">Add a Lego Set</a></li>
+            <li><a href="{% url 'index' %}" id="navcolor">View All My Legos</a></li>
+            <li><a href="{% url 'logout' %}" id="navcolor">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'signup' %}" id="navcolor">Sign Up</a></li>
+            <li><a href="{% url 'login' %}" id="navcolor">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>

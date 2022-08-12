@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -18,6 +19,7 @@ class Lego(models.Model):
     availability = models.CharField(max_length=2500)
     minimum_age = models.IntegerField()
     collections = models.ManyToManyField(Collection)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
     def __str__(self):
